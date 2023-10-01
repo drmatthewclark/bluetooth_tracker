@@ -12,8 +12,8 @@ function sleep(time) {
 
 function readfile(rfile, array) {
   print("reading file", rfile)
-
-  delete array[0]
+  # delete all array elements
+  split("",array)
 
   while((getline < rfile) > 0) {
 	print("1", $1, "2",  $2 )
@@ -34,7 +34,7 @@ function publish(ctime, locale, person, status) {
 
 BEGIN  {
 
-  interval = "45s"
+  interval = "60s"
   host = "alarm"
   q = "'\''"
   locale = "addison" 
