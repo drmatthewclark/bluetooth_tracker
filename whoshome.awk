@@ -1,10 +1,10 @@
 #!/bin/bash
-cd /home/pi/btooth
 
 awk '
 function randdelay(max) { 
 	return 1+(rand()*65535 % max)
 }
+
 function sleep(time) {
    time += randdelay(1)
    system("sleep " time)
@@ -21,7 +21,6 @@ function readfile(rfile, array) {
   }
   close(rfile)
 
-
 }
 
 function publish(ctime, locale, person, status) {
@@ -37,7 +36,7 @@ BEGIN  {
   interval = "60s"
   host = "alarm"
   q = "'\''"
-  locale = "addison" 
+  locale = "home" 
   file = "btooth.txt"
   data[0] = ""
 
